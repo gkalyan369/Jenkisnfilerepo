@@ -8,7 +8,8 @@ pipeline {
 			}
         stage('Build') {
             steps {
-               bat 'mvn clean package versions:set -DnewVersion=1.0.0'
+               bat 'mvn clean verify sonar:sonar package versions:set -DnewVersion=1.0.0'
+			   bat ''
             }
 			}
         stage('Test') {
