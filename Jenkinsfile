@@ -9,14 +9,13 @@ pipeline {
         stage('Build') {
             steps {
                bat 'mvn clean verify versions:set -DnewVersion=1.0.0'
-			   bat ''
             }
 			}
         stage('Code Quality') {
             steps {
                 echo 'Checking Code Quality'
                 withSonarQubeEnv('Sonar') {
-                    bat 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin'
+                    bat 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin -Dsonar.projectKey= Mathematical Operations -Dsonar.sources=. -Dsonar.host.://localhost:9000 '
                 }
             }
 	}
