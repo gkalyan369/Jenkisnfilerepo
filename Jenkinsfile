@@ -12,9 +12,12 @@ pipeline {
 			   bat ''
             }
 			}
-        stage('Test') {
+        stage('Code Quality') {
             steps {
-                echo 'Testing..'
+                echo 'Checking Code Quality'
+                withSonarQubeEnv('ASF Sonar Analysis') {
+                    bat 'mvn -P${JENKINS_PROFILE} sonar:sonar'
+                }
             }
 	}
 	}
