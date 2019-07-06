@@ -15,7 +15,7 @@ pipeline {
         stage('Code Quality') {
             steps {
                 echo 'Checking Code Quality'
-                withSonarQubeEnv('ASF Sonar Analysis') {
+                withSonarQubeEnv('Sonar') {
                     bat 'mvn sonar:sonar'
                 }
             }
