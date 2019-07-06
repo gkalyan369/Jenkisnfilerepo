@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Checking Code Quality'
                 withSonarQubeEnv('Sonar') {
-                    bat 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin -Dsonar.sources=. -Dsonar.host.://localhost:9000 '
+                    bat 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin -Dsonar.projectBaseDir=C:\Program Files (x86)\Jenkins\workspace\codeanthon_master-2HZK3MPNPVMPFLB4CZXMPPORV6HS7NO5WHUXCN4QPYLK3QAJXCXQ -Dsonar.sources=. -Dsonar.host.://localhost:9000 '
                 }
             }
 	}
