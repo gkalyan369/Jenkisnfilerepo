@@ -8,7 +8,7 @@ pipeline {
 			}
         stage('Build') {
             steps {
-               bat 'mvn clean package'
+               bat 'mvn clean package versions:set -DnewVersion=1.0.0'
             }
 			}
         stage('Test') {
