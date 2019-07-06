@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Checking Code Quality'
                 withSonarQubeEnv('Sonar') {
-                    bat 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin -Dsonar.projectKey=MathematicalOperations -Dsonar.sources=. / -Dsonar.host.://localhost:9000 '
+                    bat 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin -Dsonar.projectKey=MathematicalOperations -Dsonar.sources=. -Dsonar.host.://localhost:9000 '
                 }
             }
 	}
