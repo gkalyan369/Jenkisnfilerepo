@@ -1,5 +1,6 @@
 pipeline {
     agent any
+	stages {
 		stage ('Code Checkout '){
 			git url: 'https://github.com/snp-technologies/sample-cicd-java.git'
 			}
@@ -12,5 +13,6 @@ pipeline {
             steps {
                 echo 'Testing..'
             }
+	}
 	}
 }
