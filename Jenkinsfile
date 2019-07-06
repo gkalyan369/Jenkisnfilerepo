@@ -8,7 +8,7 @@ pipeline {
 			}
         stage('Build') {
             steps {
-               bat 'mvn clean verify sonar:sonar package versions:set -DnewVersion=1.0.0'
+               bat 'mvn clean verify versions:set -DnewVersion=1.0.0'
 			   bat ''
             }
 			}
@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Checking Code Quality'
                 withSonarQubeEnv('ASF Sonar Analysis') {
-                    bat 'mvn -P${JENKINS_PROFILE} sonar:sonar'
+                    bat 'mvn sonar:sonar'
                 }
             }
 	}
