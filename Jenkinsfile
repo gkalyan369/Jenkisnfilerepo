@@ -8,7 +8,7 @@ pipeline {
 			}
         stage('Build') {
             steps {
-               pom: 'pom.xml', goals: 'clean install'
+               bat 'mvn clean package'
             }
 			}
         stage('Test') {
