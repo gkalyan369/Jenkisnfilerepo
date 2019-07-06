@@ -8,7 +8,7 @@ pipeline {
 			}
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+               rtMaven.run pom: 'pom.xml', goals: 'clean install', buildInfo: buildInfo
             }
 			}
         stage('Test') {
